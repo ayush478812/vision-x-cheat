@@ -289,7 +289,6 @@
                 const seg = () => Math.random().toString(36).substring(2, 8).toUpperCase();
                 revealKey(`VISION-${seg()}-${seg()}`);
             }
-            }
         });
 
         // Copy
