@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISION X CHEAT — License Key Generator</title>
+    <meta name="description" content="Generate your VISION X CHEAT license key. Premium secure key generator.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Three.js Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Ambient Gradient Blobs -->
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- ====== UI ====== -->
+    <div class="ui-layer">
+
+        <!-- Header -->
+        <header class="site-header">
+            <div class="header-left">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <span class="brand">VISION <span class="brand-x">X</span> CHEAT</span>
+                <span class="badge badge-version">v2.4</span>
+                <span class="badge badge-pro" id="pro-badge" style="display:none;">PRO</span>
+            </div>
+            <div class="header-right">
+                <div class="pill" id="keygen-pill" style="display:none;">
+                    <div class="pill-dot pill-dot-purple"></div>
+                    <span class="pill-text">Key Gen Active</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot pill-dot-green"></div>
+                    <span class="pill-text">API Online</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="card-outer" id="generator-card" style="opacity:0; transform:translateY(30px) scale(0.97);">
+                <div class="card-inner">
+
+                    <!-- Header -->
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fa-solid fa-key"></i></div>
+                        <h2 class="card-title">License Generator</h2>
+                        <p class="card-desc">Complete verification to generate your unique license key.</p>
+                    </div>
+
+                    <!-- Step 1 -->
+                    <div>
+                        <div class="step-row">
+                            <div class="step-tag"><span class="step-num">1</span> Verify</div>
+                            <span class="step-status">Required</span>
+                        </div>
+                        <a href="https://creators.lootlabs.gg/" target="_blank" rel="noopener" id="watch-ad-btn" class="btn-verify">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Complete Verification to Unlock</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                        </a>
+                        <p style="font-size:11px; text-align:center; color:rgba(255,255,255,0.12); margin-top:8px;">
+                            A quick verification step is required to proceed.
+                        </p>
+                    </div>
+
+                    <hr class="divider">
+
+                    <!-- Step 2 -->
+                    <div>
+                        <div class="step-row">
+                            <div class="step-tag"><span class="step-num">2</span> Claim</div>
+                            <span class="step-status">Generate</span>
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:10px;">
+                            <button id="claim-btn" class="btn-generate">
+                                <i class="fa-solid fa-unlock"></i>
+                                <span>Generate License Key</span>
+                            </button>
+                        </div>
+
+                        <!-- Result -->
+                        <div id="result-area" class="result-box">
+                            <span class="result-label">Your License Key</span>
+                            <div class="key-field-wrap">
+                                <input type="text" id="generated-key" readonly class="key-field" value="">
+                                <button id="copy-btn" class="copy-btn" title="Copy to clipboard">
+                                    <i class="fa-regular fa-copy" id="copy-icon"></i>
+                                </button>
+                            </div>
+                            <p class="result-note">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Key generated successfully — store it safely.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p class="footer-text">&copy; 2026 VISION X CHEAT &mdash; All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Three.js & GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
