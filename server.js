@@ -30,7 +30,10 @@ app.post('/api/generate-key', async (req, res) => {
         }
 
         // Get Client IP Address
-        const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+        let clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+        if (typeof clientIp === 'string') {
+            clientIp = clientIp.split(',')[0].trim();
+        }
 
         // Check if IP is in cache and within the 24 hour cooldown
         if (ipCache.has(clientIp)) {
@@ -78,7 +81,10 @@ app.post('/api/generate-key', async (req, res) => {
 });
 // Check Existing Key Endpoint
 app.get('/api/check-key', (req, res) => {
-    const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    let clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    if (typeof clientIp === 'string') {
+        clientIp = clientIp.split(',')[0].trim();
+    }
 
     if (ipCache.has(clientIp)) {
         const cachedData = ipCache.get(clientIp);
