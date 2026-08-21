@@ -252,6 +252,10 @@
             );
         }
 
+        // Check URL for verification status
+        const urlParams = new URLSearchParams(window.location.search);
+        const isVerified = urlParams.get('verified') === 'true';
+
         // Check on load if this IP already has a key generated
         async function checkExistingKey() {
             try {
@@ -269,6 +273,17 @@
 
         // Generate
         claimBtn.addEventListener('click', async () => {
+            if (!isVerified) {
+                const original = claimBtn.innerHTML;
+                claimBtn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> First Complete Task!';
+                claimBtn.style.background = 'linear-gradient(135deg, #b91c1c, #dc2626)';
+                setTimeout(() => {
+                    claimBtn.innerHTML = original;
+                    claimBtn.style.background = '';
+                }, 3000);
+                return;
+            }
+
             const original = claimBtn.innerHTML;
             claimBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generating...';
             claimBtn.disabled = true;
